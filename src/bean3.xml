@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-beans.xsd">
+
+    <bean id="stu" class="com.atguigu.spring5.collectiontype.Stu">
+        <property name="course">
+            <array>
+                <value>Java课程</value>
+                <value>C语言课程</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>html课程</value>
+                <value>web课程</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+                <entry key="PHP" value="php"></entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>c++</value>
+                <value>go语言</value>
+            </set>
+        </property>
+        <property name="courses">
+            <list>
+                <ref bean="course"></ref>
+                <ref bean="course1"></ref>
+            </list>
+
+        </property>
+    </bean>
+    <bean name="course" class="com.atguigu.spring5.collectiontype.Course">
+        <property name="cname" value="Spring5课程"></property>
+    </bean>
+    <bean name="course1" class="com.atguigu.spring5.collectiontype.Course">
+        <property name="cname" value="MyBatis课程"></property>
+    </bean>
+</beans>

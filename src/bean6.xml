@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="orders" class="com.atguigu.spring5.beans.Orders" init-method="initMethod" destroy-method="desMethod">
+        <property name="oName" value="手机"></property>
+    </bean>
+<!--配置后置处理器-->
+    <bean id="mybeanpost" class="com.atguigu.spring5.beans.MyBeanPost"></bean>
+<!--自动装配
+bean属性autowire，配置自动装配
+autowire属性常用两个值：byName：根据属性名称注入，注入值bean的id值和类的属性名相同；byType：
+
+
+-->
+    <bean id="emp" class="com.atguigu.spring5.autowire.Emp" autowire="byName"></bean>
+
+    <bean id="dept" class="com.atguigu.spring5.autowire.Dept"></bean>
+
+</beans>
